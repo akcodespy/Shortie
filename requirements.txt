@@ -1,7 +1,7 @@
 fastapi
-uvicorn
-sqlalchemy
+uvicorn[standard]
+sqlmodel
 psycopg2-binary
 pydantic
 redis
-dotenv
+python-dotenv
