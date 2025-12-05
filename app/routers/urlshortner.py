@@ -9,6 +9,7 @@ from app.models import URL
 
 load_dotenv()
 REDIS_URL = os.getenv("REDIS_URL")
+BASE_HOST = os.getenv("BASE_HOST").rstrip("/")
 r = redis.from_url(REDIS_URL, decode_responses=True)
 
 BASE = 62

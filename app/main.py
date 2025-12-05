@@ -9,6 +9,7 @@ from app.schemas import URLRequest
 
 
 
+
 app =  FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
