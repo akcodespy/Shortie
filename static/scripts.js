@@ -10,7 +10,22 @@ async function shorter()
             body:JSON.stringify({ url: inputText })
         });
 
-        OutputBox.value = await response.text()
-        
+        const url_with_quote = await response.text()
+        OutputBox.value =url_with_quote.replace(/"/g, '');
+        document.getElementById('short-url-section').style.display = 'block';
                                     
+}
+function copyUrl() {
+    const outputBox = document.getElementById('short-url');
+    const shortUrl = outputBox.value;
+    navigator.clipboard.writeText(shortUrl)
+        .then(() => {
+            const copyButton = document.getElementById('copy-btn');
+            const originalText = copyButton.innerText;
+            copyButton.innerText = "Copied!";
+
+            setTimeout(() => {
+                copyButton.innerText = originalText;
+            }, 1000); 
+        })
 }
