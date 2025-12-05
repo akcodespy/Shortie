@@ -9,7 +9,7 @@ from app.models import URL
 
 load_dotenv()
 REDIS_URL = os.getenv("REDIS_URL")
-BASE_HOST = os.getenv("BASE_HOST").rstrip("/")
+BASE_HOST = os.getenv("BASE_HOST", '127.0.0.1/8000').rstrip("/")
 r = redis.from_url(REDIS_URL, decode_responses=True)
 
 BASE = 62
@@ -32,7 +32,7 @@ def shortenurl(url:str,db: Session):
     db.add(item)
     db.commit()
 
-    short_url = f"http://localhost:8000/{short_code}"
+    short_url = f"{BASE_HOST}/{short_code}"
 
     r.set(key, short_url)
     r.set(f"code:{short_code}", url)
