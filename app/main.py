@@ -3,7 +3,7 @@ from fastapi.responses import FileResponse,RedirectResponse
 from app.db import Base, engine
 from sqlalchemy.orm import Session
 from app.db import get_db
-from app.routers.urlshortner import shortenurl, redirect_to_original
+from app.urlshortner import shortenurl, redirect_to_original
 from fastapi.staticfiles import StaticFiles
 from app.schemas import URLRequest
 
