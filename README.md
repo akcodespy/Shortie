@@ -5,6 +5,11 @@ Users can convert long URLs into short codes and get redirected to the original 
 
 ---
 
+- **Shortie:**  
+  https://shortie-production.up.railway.app
+
+---
+
 ## ✨ **Features**
 
 - Shorten long URLs into unique short codes
